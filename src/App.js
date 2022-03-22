@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
+import Certification from './upload-page';
+import FileUpload from './FileUpload/file-upload'
 
 function App() {
+  const [files, setFiles] = useState([])
+
+  const removeFile = (filename) => {
+    setFiles(files.filter(file => file.name !== filename))
+  }
+
+  console.log("files::",files)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Certification/> */}
+      <FileUpload files={files} setFiles={setFiles}
+        removeFile={removeFile} />
     </div>
   );
 }
