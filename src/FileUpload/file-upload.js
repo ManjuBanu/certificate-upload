@@ -58,12 +58,12 @@ const FileUpload = ({ files, setFiles, removeFile }) => {
 <div className="form-group">
   <div className="float-element">
   <label>Certification name</label>
-  <input type="text" name='certificateName' value={certificateName} className="input-control" onChange={event =>setCertificateName(event.target.value)}/>
+  <input required type="text" name='certificateName' value={certificateName} className="input-control" onChange={event =>setCertificateName(event.target.value)}/>
   </div>
   
 <div className="float-element">
   <label>Issuer</label>
-  <input type="text" value={issuerName} className="input-control" onChange={event => {setIssuerName(event.target.value)}} />
+  <input required type="text" value={issuerName} className="input-control" onChange={event => {setIssuerName(event.target.value)}} />
   </div>
 </div>
 
